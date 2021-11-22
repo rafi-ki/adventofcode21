@@ -17,13 +17,14 @@ let readDayPart (args: string []) =
     | 2 -> (args.[0] |> int, args.[1] |> int)
     | _ -> (1, 1)
 
+let solve day part =
+    match inputFor day |> readLines with
+    | Ok lines -> EveryDay.solve day { Part = part; Lines = lines }
+    | Error txt -> $"ERROR: %s{txt}"
 
 [<EntryPoint>]
 let main argv =
     let day, part = readDayPart argv
     printfn $"-- DAY %i{day} | PART %i{part} --"
-    match inputFor day |> readLines with
-    | Ok lines -> EveryDay.solve day { Part = part; Lines = lines }
-    | Error txt -> $"ERROR: %s{txt}"
-    |> printfn "%s"
+    solve day part |> printfn "%s"
     0
