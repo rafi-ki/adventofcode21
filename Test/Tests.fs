@@ -10,16 +10,16 @@ module DayOne =
     let ``solve part one``() =
         let puzzle = {
             Part = 1
-            Lines = [|"1721";"979";"366";"299";"675";"1456"|]
+            Lines = [|"199"; "200"; "208"; "210"; "200"; "207"; "240"; "269"; "260"; "263"|]
         }
         let result = One.solve puzzle
-        Assert.Equal("1", result)
+        Assert.Equal("7", result)
 
     [<Fact>]
     let ``solve part two``() =
         let puzzle = {
             Part = 2
-            Lines = [|"1721";"979";"366";"299";"675";"1456"|]
+            Lines = [|"199"; "200"; "208"; "210"; "200"; "207"; "240"; "269"; "260"; "263"|]
         }
         let result = One.solve puzzle
-        Assert.Equal("2", result)
+        Assert.Equal("5", result)
