@@ -38,7 +38,7 @@ module DayTwo =
     let ``part two``() =
         let puzzle = {
             Part = 2
-            Lines = [|"199"; "200"; "208"; "210"; "200"; "207"; "240"; "269"; "260"; "263"|]
+            Lines = [|"forward 5";"down 5";"forward 8";"up 3";"down 8";"forward 2"|]
         }
         let result = EveryDay.solve 2 puzzle
-        Assert.Equal("solving day 2 part 2", result)
+        Assert.Equal("900", result)
