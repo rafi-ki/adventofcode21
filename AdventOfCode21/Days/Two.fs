@@ -33,13 +33,13 @@ let solve1 (puzzle: DailyPuzzle) =
                         puzzle.Lines
                         |> Array.map parseToAction
                         |> Array.fold (fun position action -> apply action position) init
-    finalPosition.X * finalPosition.Depth |> string
+    finalPosition.X * finalPosition.Depth
 
 let solve2 (puzzle: DailyPuzzle) =
     let init = { X = 0; Depth = 0; Aim = 0 }
     let final = puzzle.Lines
                 |> Array.map parseToAction
                 |> Array.fold (fun position action -> applyAimed action position) init
-    final.X * final.Depth |> string
+    final.X * final.Depth
 
 let solve puzzle = puzzle |> if puzzle.Part = 1 then solve1 else solve2

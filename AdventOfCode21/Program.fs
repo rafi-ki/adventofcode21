@@ -19,7 +19,7 @@ let readDayPart (args: string []) =
 
 let solve day part =
     match inputFor day |> readLines with
-    | Ok lines -> EveryDay.solve day { Part = part; Lines = lines }
+    | Ok lines -> EveryDay.solve day { Part = part; Lines = lines } |> string
     | Error txt -> $"ERROR: %s{txt}"
 
 [<EntryPoint>]
