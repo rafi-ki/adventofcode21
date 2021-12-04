@@ -56,7 +56,7 @@ module DayThree =
     let ``part two``() =
         let puzzle = {
             Part = 2
-            Lines = [|"forward 5";"down 5";"forward 8";"up 3";"down 8";"forward 2"|]
+            Lines = [|"00100";"11110";"10110";"10111";"10101";"01111";"00111";"11100";"10000";"11001";"00010";"01010"|]
         }
         let result = EveryDay.solve 3 puzzle
-        Assert.Equal(-1, result)
+        Assert.Equal(230, result)
