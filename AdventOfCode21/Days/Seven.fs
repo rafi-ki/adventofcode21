@@ -20,18 +20,18 @@ let solve1 (puzzle: DailyPuzzle) =
 
 let binomial v = (v * v + v) / 2
 
-let calcFuelConsumption2 (i : int) (positions : int []) (possiblePositions : int [])=
-    possiblePositions |> Array.fold (fun acc el ->
-        { acc with Consumption = acc.Consumption + if (positions |> Array.contains el) then binomial(abs(el - i)) else 0 })
-        (initConsumption i i)
+let calcCrabsMovement position (crabs: int[]) =
+    crabs |> Array.fold (fun acc el -> acc + binomial(abs(el - position))) 0
+
+let calcFuelConsumption2 (crabs : int []) (possiblePositions : int [])=
+    possiblePositions |> Array.map (fun x -> calcCrabsMovement x crabs)
 
 let solve2 (puzzle: DailyPuzzle) =
     let positions = puzzle.Lines.[0].Split(",") |> Array.map int
     let possiblePositions = [| Array.min positions .. Array.max positions |]
-    let fuelConsumptions = possiblePositions |> Array.mapi (fun x _ -> calcFuelConsumption2 x positions possiblePositions)
-    fuelConsumptions
-    |> Array.map (fun x -> x.Consumption)
+    calcFuelConsumption2 positions possiblePositions
     |> Array.sort
     |> Array.head
+
 
 let solve puzzle = puzzle |> if puzzle.Part = 1 then solve1 else solve2
