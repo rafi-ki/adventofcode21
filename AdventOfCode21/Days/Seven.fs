@@ -23,4 +23,6 @@ let solve2 (puzzle: DailyPuzzle) =
     |> Array.sort
     |> Array.head
 
-let solve puzzle = puzzle |> if puzzle.Part = 1 then solve1 else solve2
+let solve puzzle =
+    puzzle |> if puzzle.Part = 1 then solve1 else solve2
+    |> int64

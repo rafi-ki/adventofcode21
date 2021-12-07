@@ -1,6 +1,8 @@
 ﻿module Days.EveryDay
 
-let solve day =
+open CommonTypes
+
+let solve day : DailyPuzzle -> int64 =
     match day with
     | 1 -> One.solve
     | 2 -> Two.solve

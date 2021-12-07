@@ -42,4 +42,6 @@ let solve2 (puzzle: DailyPuzzle) =
                 |> Array.fold (fun position action -> applyAimed action position) init
     final.X * final.Depth
 
-let solve puzzle = puzzle |> if puzzle.Part = 1 then solve1 else solve2
+let solve puzzle =
+    puzzle |> if puzzle.Part = 1 then solve1 else solve2
+    |> int64

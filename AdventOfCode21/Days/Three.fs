@@ -21,7 +21,7 @@ let solve1 (puzzle: DailyPuzzle) =
     let mostAppearing = toColumns puzzle.Lines |> Array.map mostAppearance |> String
     let gamma = Convert.ToInt32(mostAppearing, 2)
     let epsilon = Convert.ToInt32(mostAppearing |> flip, 2)
-    gamma * epsilon
+    gamma * epsilon |> int64
 
 let filter f (lines: string[]) (index: int) =
     if lines.Length = 1 then
@@ -35,13 +35,13 @@ let oxygenRating (lines: string[]) =
     let mutable linescopy = Array.copy lines
     for i = 0 to lines.[0].Length-1 do
         linescopy <- filter mostAppearance linescopy i
-    Convert.ToInt32(Array.head linescopy, 2)
+    Convert.ToInt64(Array.head linescopy, 2)
 
 let scrubberRating (lines: string[]) =
     let mutable linescopy = Array.copy lines
     for i = 0 to lines.[0].Length-1 do
         linescopy <- filter leastAppearance linescopy i
-    Convert.ToInt32(Array.head linescopy, 2)
+    Convert.ToInt64(Array.head linescopy, 2)
 
 let solve2 (puzzle: DailyPuzzle) =
     oxygenRating puzzle.Lines * scrubberRating puzzle.Lines

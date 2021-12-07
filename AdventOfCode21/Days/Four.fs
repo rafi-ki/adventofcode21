@@ -25,10 +25,10 @@ let solve1 (puzzle: DailyPuzzle) =
     let draw = parseDraw puzzle.Lines.[0]
     let boardLines = puzzle.Lines |> Array.skip 2 |> Array.chunkBySize 6
     let boards = boardLines |> Array.map parseBoard
-    1
+    1L
 
 let solve2 (puzzle: DailyPuzzle) =
-    2
+    2L
 
 let solve puzzle = puzzle |> if puzzle.Part = 1 then solve1 else solve2
 

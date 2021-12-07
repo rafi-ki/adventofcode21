@@ -12,7 +12,7 @@ module DayOne =
             Lines = [|"199"; "200"; "208"; "210"; "200"; "207"; "240"; "269"; "260"; "263"|]
         }
         let result = EveryDay.solve 1 puzzle
-        Assert.Equal(7, result)
+        Assert.Equal(7L, result)
 
     [<Fact>]
     let ``part two``() =
@@ -21,7 +21,7 @@ module DayOne =
             Lines = [|"199"; "200"; "208"; "210"; "200"; "207"; "240"; "269"; "260"; "263"|]
         }
         let result = EveryDay.solve 1 puzzle
-        Assert.Equal(5, result)
+        Assert.Equal(5L, result)
 
 module DayTwo =
     [<Fact>]
@@ -31,7 +31,7 @@ module DayTwo =
             Lines = [|"forward 5";"down 5";"forward 8";"up 3";"down 8";"forward 2"|]
         }
         let result = EveryDay.solve 2 puzzle
-        Assert.Equal(150, result)
+        Assert.Equal(150L, result)
 
     [<Fact>]
     let ``part two``() =
@@ -40,7 +40,7 @@ module DayTwo =
             Lines = [|"forward 5";"down 5";"forward 8";"up 3";"down 8";"forward 2"|]
         }
         let result = EveryDay.solve 2 puzzle
-        Assert.Equal(900, result)
+        Assert.Equal(900L, result)
 
 module DayThree =
     [<Fact>]
@@ -50,7 +50,7 @@ module DayThree =
             Lines = [|"00100";"11110";"10110";"10111";"10101";"01111";"00111";"11100";"10000";"11001";"00010";"01010"|]
         }
         let result = EveryDay.solve 3 puzzle
-        Assert.Equal(198, result)
+        Assert.Equal(198L, result)
 
     [<Fact>]
     let ``part two``() =
@@ -59,7 +59,7 @@ module DayThree =
             Lines = [|"00100";"11110";"10110";"10111";"10101";"01111";"00111";"11100";"10000";"11001";"00010";"01010"|]
         }
         let result = EveryDay.solve 3 puzzle
-        Assert.Equal(230, result)
+        Assert.Equal(230L, result)
 
 module DayFour =
     [<Fact>]
@@ -88,7 +88,7 @@ module DayFour =
                 "2  0 12  3  7"|]
         }
         let result = EveryDay.solve 4 puzzle
-        Assert.Equal(4512, result)
+        Assert.Equal(4512L, result)
 
     [<Fact>]
     let ``part two``() =
@@ -97,7 +97,7 @@ module DayFour =
             Lines = [|"00100";"11110";"10110";"10111";"10101";"01111";"00111";"11100";"10000";"11001";"00010";"01010"|]
         }
         let result = EveryDay.solve 4 puzzle
-        Assert.Equal(2, result)
+        Assert.Equal(2L, result)
 
 module DaySix =
     [<Fact>]
@@ -107,16 +107,16 @@ module DaySix =
             Lines = [|"3,4,3,1,2"|]
         }
         let result = EveryDay.solve 6 puzzle
-        Assert.Equal(5934, result)
+        Assert.Equal(5934L, result)
 
     [<Fact>]
     let ``part two``() =
         let puzzle = {
             Part = 2
-            Lines = [|"16,1,2,0,4,2,7,1,2,14"|]
+            Lines = [|"3,4,3,1,2"|]
         }
-        let result = EveryDay.solve 7 puzzle
-        Assert.Equal(168, result)
+        let result = EveryDay.solve 6 puzzle
+        Assert.Equal("26984457539", result |> string)
 
 module DaySeven =
     [<Fact>]
@@ -126,7 +126,7 @@ module DaySeven =
             Lines = [|"16,1,2,0,4,2,7,1,2,14"|]
         }
         let result = EveryDay.solve 7 puzzle
-        Assert.Equal(37, result)
+        Assert.Equal(37L, result)
 
     [<Fact>]
     let ``part two``() =
@@ -135,4 +135,4 @@ module DaySeven =
             Lines = [|"16,1,2,0,4,2,7,1,2,14"|]
         }
         let result = EveryDay.solve 7 puzzle
-        Assert.Equal(168, result)
+        Assert.Equal(168L, result)
