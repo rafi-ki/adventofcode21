@@ -6,4 +6,5 @@ let solve day =
     | 2 -> Two.solve
     | 3 -> Three.solve
     | 4 -> Four.solve
+    | 7 -> Seven.solve
     | _ -> failwith "day not yet solvable"

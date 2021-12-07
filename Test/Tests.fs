@@ -98,3 +98,22 @@ module DayFour =
         }
         let result = EveryDay.solve 4 puzzle
         Assert.Equal(2, result)
+
+module DaySeven =
+    [<Fact>]
+    let ``part one``() =
+        let puzzle = {
+            Part = 1
+            Lines = [|"16,1,2,0,4,2,7,1,2,14"|]
+        }
+        let result = EveryDay.solve 7 puzzle
+        Assert.Equal(37, result)
+
+    [<Fact>]
+    let ``part two``() =
+        let puzzle = {
+            Part = 2
+            Lines = [|"00100";"11110";"10110";"10111";"10101";"01111";"00111";"11100";"10000";"11001";"00010";"01010"|]
+        }
+        let result = EveryDay.solve 4 puzzle
+        Assert.Equal(2, result)
