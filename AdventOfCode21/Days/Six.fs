@@ -14,7 +14,7 @@ let passDay (fishes: Fish[]) =
     let newFishes = Array.init newFishCount (fun _ -> { Timer = 8L })
     Array.append reducedTimerFishes newFishes
 
-let passDay2 (fishBuckets: FishBucket[]) =
+let passDayWithBucket (fishBuckets: FishBucket[]) =
     let fishBucket0 = fishBuckets |> Array.filter (fun x -> x.Timer = 0)
     let fishBucket1 = fishBuckets |> Array.filter (fun x -> x.Timer = 1)
     let fishBucket2 = fishBuckets |> Array.filter (fun x -> x.Timer = 2)
@@ -62,7 +62,7 @@ let solve2 (puzzle: DailyPuzzle) =
         { Timer = 5; Count = fishCount5 |> int64 }
     |]
     [|1 .. 256|]
-    |> Array.fold (fun acc _ -> passDay2 acc) fishBuckets
+    |> Array.fold (fun acc _ -> passDayWithBucket acc) fishBuckets
     |> Array.sumBy (fun x -> x.Count) |> int64
 
 let solve puzzle = puzzle |> if puzzle.Part = 1 then solve1 else solve2
