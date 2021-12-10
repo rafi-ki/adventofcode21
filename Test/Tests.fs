@@ -136,3 +136,22 @@ module DaySeven =
         }
         let result = EveryDay.solve 7 puzzle
         Assert.Equal(168L, result)
+
+module DayNine =
+    [<Fact>]
+    let ``part one``() =
+        let puzzle = {
+            Part = 1
+            Lines = [|"2199943210";"3987894921";"9856789892";"8767896789";"9899965678"|]
+        }
+        let result = EveryDay.solve 9 puzzle
+        Assert.Equal(15L, result)
+
+    [<Fact>]
+    let ``part two``() =
+        let puzzle = {
+            Part = 2
+            Lines = [|"2199943210";"3987894921";"9856789892";"8767896789";"9899965678"|]
+        }
+        let result = EveryDay.solve 9 puzzle
+        Assert.Equal(168L, result)

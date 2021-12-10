@@ -10,4 +10,5 @@ let solve day : DailyPuzzle -> int64 =
     | 4 -> Four.solve
     | 6 -> Six.solve
     | 7 -> Seven.solve
+    | 9 -> Nine.solve
     | _ -> failwith "day not yet solvable"
