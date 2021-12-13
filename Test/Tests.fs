@@ -155,3 +155,24 @@ module DayNine =
         }
         let result = EveryDay.solve 9 puzzle
         Assert.Equal(168L, result)
+
+module DayTen =
+    [<Fact>]
+    let ``part one``() =
+        let puzzle = {
+            Part = 1
+            Lines = [|"[({(<(())[]>[[{[]{<()<>>";"[(()[<>])]({[<{<<[]>>(";"{([(<{}[<>[]}>{[]{[(<()>"
+                      "(((({<>}<{<{<>}{[]{[]{}";"[[<[([]))<([[{}[[()]]]";"[{[{({}]{}}([{[{{{}}([]"
+                      "{<[[]]>}<{[{[{[]{()[[[]";"[<(<(<(<{}))><([]([]()";"<{([([[(<>()){}]>(<<{{";"<{([{{}}[<[[[<>{}]]]>[]]"|]
+        }
+        let result = EveryDay.solve 10 puzzle
+        Assert.Equal(26397L, result)
+
+    [<Fact>]
+    let ``part two``() =
+        let puzzle = {
+            Part = 2
+            Lines = [|"2199943210";"3987894921";"9856789892";"8767896789";"9899965678"|]
+        }
+        let result = EveryDay.solve 10 puzzle
+        Assert.Equal(168L, result)
